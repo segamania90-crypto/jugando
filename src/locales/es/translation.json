@@ -1,0 +1,92 @@
+{
+  "common": {
+  "rating": "Calificación",
+  "loadError": "No se pudieron cargar los juegos. Inténtalo más tarde."
+ },
+
+"gameModal": {
+  "loading": "Cargando...",
+  "loadError": "No se pudo cargar la información del juego.",
+  "close": "Cerrar",
+  "released": "Fecha de lanzamiento",
+  "platforms": "Plataformas"
+  },
+  "navbar": {
+    "catalog": "Catálogo",
+    "popular": "Popular",
+    "login": "Iniciar sesión",
+    "register": "Registrarse",
+    "favorites": "Favoritos",
+    "logout": "Cerrar sesión"
+  },
+  "landing": {
+  "subtitle": "Catálogo de videojuegos: busca, filtra y guarda tus juegos favoritos.",
+  "watchCatalog": "Ver catálogo",
+  "myFavorites": "Mis favoritos",
+  "register": "Registrarse",
+  "popularNow": "TENDENCIAS AHORA",
+  "more": "Más",
+  "loading": "Cargando...",
+  "watchFullCatalog": "Ver catálogo completo →",
+  "loadMoreError": "No se pudieron cargar más juegos. Inténtalo más tarde."
+  },
+  "catalog": {
+  "title": "CATÁLOGO DE JUEGOS",
+  "searchPlaceholder": "Buscar juegos por nombre...",
+  "allGenres": "Todos los géneros",
+  "allPlatforms": "Todas las plataformas",
+  "noResults": "No se encontró nada",
+  "noResultsHint": "Prueba con otra búsqueda o filtros.",
+  "resetFilters": "Borrar búsqueda y filtros"
+  },
+  "popular": {
+  "title": "LOS MÁS POPULARES",
+  "searchPlaceholder": "Buscar juegos por nombre...",
+  "noResults": "No se encontró nada",
+  "noResultsHint": "Prueba con otra búsqueda.",
+  "resetSearch": "Borrar búsqueda"
+  },
+  "favorites": {
+  "title": "FAVORITOS",
+  "searchPlaceholder": "Buscar en favoritos...",
+  "empty": "Tu lista de favoritos está vacía",
+  "emptyHint": "Añade juegos pulsando la estrella en el catálogo o en populares, y aparecerán aquí.",
+  "goToCatalog": "Ir al catálogo",
+  "noResults": "No se encontró nada",
+  "noResultsHint": "No hay favoritos con ese nombre.",
+  "removeFromFavorites": "Quitar de favoritos"
+  },
+    "auth": {
+    "loginTitle": "INICIAR SESIÓN",
+    "registerTitle": "REGISTRO",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "loginButton": "Iniciar sesión",
+    "registerButton": "Registrarse",
+    "loggingIn": "Iniciando sesión...",
+    "registering": "Registrando...",
+    "noAccount": "¿No tienes cuenta?",
+    "haveAccount": "¿Ya tienes cuenta?",
+    "goToRegister": "Registrarse",
+    "goToLogin": "Iniciar sesión",
+    "errors": {
+      "invalidEmail": "Correo electrónico no válido.",
+      "userNotFound": "No se encontró un usuario con este correo.",
+      "wrongPassword": "Contraseña incorrecta.",
+      "invalidCredential": "Correo o contraseña incorrectos.",
+      "loginFailed": "No se pudo iniciar sesión. Inténtalo de nuevo.",
+      "emailInUse": "Este correo ya está en uso.",
+      "weakPassword": "La contraseña es demasiado débil.",
+      "registerFailed": "No se pudo registrar. Inténtalo de nuevo."
+    }
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "backHome": "Volver al inicio"
+  },
+  "toast": {
+  "loginToSave": "Inicia sesión para guardar favoritos",
+  "addToFavorites": "Añadir a favoritos",
+  "removeFromFavorites": "Quitar de favoritos"
+  }
+}

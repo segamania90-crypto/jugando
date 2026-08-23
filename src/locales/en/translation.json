@@ -1,0 +1,93 @@
+{ 
+  "common": {
+  "rating": "Rating",
+  "loadError": "Failed to load games. Please try again later."
+},
+
+"gameModal": {
+  "loading": "Loading...",
+  "loadError": "Failed to load game details.",
+  "close": "Close",
+  "released": "Release date",
+  "platforms": "Platforms"
+},
+
+  "navbar": {
+    "catalog": "Catalog",
+    "popular": "Popular",
+    "login": "Log in",
+    "register": "Sign up",
+    "favorites": "Favorites",
+    "logout": "Log out"
+  },
+  "landing": {
+  "subtitle": "Video game catalog: search, filter, and save your favorite games.",
+  "watchCatalog": "Browse catalog",
+  "myFavorites": "My favorites",
+  "register": "Sign up",
+  "popularNow": "TRENDING NOW",
+  "more": "More",
+  "loading": "Loading...",
+  "watchFullCatalog": "Browse full catalog →",
+  "loadMoreError": "Failed to load more games. Please try again later."
+  },
+  "catalog": {
+  "title": "GAME CATALOG",
+  "searchPlaceholder": "Search games by name...",
+  "allGenres": "All genres",
+  "allPlatforms": "All platforms",
+  "noResults": "Nothing found",
+  "noResultsHint": "Try a different search or filters.",
+  "resetFilters": "Clear search and filters"
+  },
+  "popular": {
+  "title": "MOST POPULAR",
+  "searchPlaceholder": "Search games by name...",
+  "noResults": "Nothing found",
+  "noResultsHint": "Try a different search.",
+  "resetSearch": "Clear search"
+},
+  "favorites": {
+  "title": "FAVORITES",
+  "searchPlaceholder": "Search favorites...",
+  "empty": "Your favorites list is empty",
+  "emptyHint": "Add games by clicking the star in the catalog or popular section, and they'll show up here.",
+  "goToCatalog": "Go to catalog",
+  "noResults": "Nothing found",
+  "noResultsHint": "No favorite games match that name.",
+  "removeFromFavorites": "Remove from favorites"
+},
+    "auth": {
+    "loginTitle": "LOG IN",
+    "registerTitle": "SIGN UP",
+    "email": "Email",
+    "password": "Password",
+    "loginButton": "Log in",
+    "registerButton": "Sign up",
+    "loggingIn": "Logging in...",
+    "registering": "Signing up...",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?",
+    "goToRegister": "Sign up",
+    "goToLogin": "Log in",
+    "errors": {
+      "invalidEmail": "Invalid email.",
+      "userNotFound": "No user found with this email.",
+      "wrongPassword": "Incorrect password.",
+      "invalidCredential": "Invalid email or password.",
+      "loginFailed": "Failed to log in. Please try again.",
+      "emailInUse": "This email is already in use.",
+      "weakPassword": "Password is too weak.",
+      "registerFailed": "Failed to sign up. Please try again."
+    }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "backHome": "Back to home"
+  },
+  "toast": {
+  "loginToSave": "Log in to save favorites",
+  "addToFavorites": "Add to favorites",
+  "removeFromFavorites": "Remove from favorites"
+  }
+}

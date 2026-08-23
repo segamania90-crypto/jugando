@@ -1,0 +1,94 @@
+  {
+  "common": {
+    "rating": "Рейтинг",
+    "loadError": "Не удалось загрузить игры. Попробуйте позже."
+  },
+
+  "gameModal": {
+  "loading": "Загрузка...",
+  "loadError": "Не удалось загрузить информацию об игре.",
+  "close": "Закрыть",
+  "released": "Дата выхода",
+  "platforms": "Платформы"
+   },
+
+    "navbar": {
+    "catalog": "Каталог",
+    "popular": "Популярное",
+    "login": "Войти",
+    "register": "Регистрация",
+    "favorites": "Избранное",
+    "logout": "Выйти"
+  },
+  "landing": {
+  "subtitle": "Каталог видеоигр: ищи, фильтруй и сохраняй любимые игры в личное избранное.",
+  "watchCatalog": "Смотреть каталог",
+  "myFavorites": "Моё избранное",
+  "register": "Регистрация",
+  "popularNow": "ПОПУЛЯРНОЕ СЕЙЧАС",
+  "more": "Ещё",
+  "loading": "Загрузка...",
+  "watchFullCatalog": "Смотреть весь каталог →",
+  "loadMoreError": "Не удалось загрузить ещё игр. Попробуйте позже."
+  },
+  "catalog": {
+  "title": "КАТАЛОГ ИГР",
+  "searchPlaceholder": "Поиск игр по названию...",
+  "allGenres": "Все жанры",
+  "allPlatforms": "Все платформы",
+  "noResults": "Ничего не найдено",
+  "noResultsHint": "Попробуйте изменить запрос или фильтры.",
+  "resetFilters": "Сбросить поиск и фильтры"
+  },
+  "popular": {
+  "title": "САМЫЕ ПОПУЛЯРНЫЕ",
+  "searchPlaceholder": "Поиск игр по названию...",
+  "noResults": "Ничего не найдено",
+  "noResultsHint": "Попробуйте изменить запрос.",
+  "resetSearch": "Сбросить поиск"
+  },
+
+  "favorites": {
+  "title": "ИЗБРАННОЕ",
+  "searchPlaceholder": "Поиск по избранному...",
+  "empty": "Избранное пока пусто",
+  "emptyHint": "Добавляйте игры звёздочкой в каталоге или в разделе популярного, и они появятся здесь.",
+  "goToCatalog": "Перейти в каталог",
+  "noResults": "Ничего не найдено",
+  "noResultsHint": "В избранном нет игр с таким названием.",
+  "removeFromFavorites": "Убрать из избранного"
+  },
+    "auth": {
+    "loginTitle": "ВХОД",
+    "registerTitle": "РЕГИСТРАЦИЯ",
+    "email": "Email",
+    "password": "Пароль",
+    "loginButton": "Войти",
+    "registerButton": "Зарегистрироваться",
+    "loggingIn": "Входим...",
+    "registering": "Регистрируем...",
+    "noAccount": "Нет аккаунта?",
+    "haveAccount": "Уже есть аккаунт?",
+    "goToRegister": "Зарегистрироваться",
+    "goToLogin": "Войти",
+    "errors": {
+      "invalidEmail": "Некорректный email.",
+      "userNotFound": "Пользователь с таким email не найден.",
+      "wrongPassword": "Неверный пароль.",
+      "invalidCredential": "Неверный email или пароль.",
+      "loginFailed": "Не удалось войти. Попробуйте ещё раз.",
+      "emailInUse": "Этот email уже занят.",
+      "weakPassword": "Пароль слишком простой.",
+      "registerFailed": "Не удалось зарегистрироваться. Попробуйте ещё раз."
+    }
+  },
+  "notFound": {
+    "title": "Страница не найдена",
+    "backHome": "На главную"
+  },
+  "toast": {
+  "loginToSave": "Войдите, чтобы сохранять избранное",
+  "addToFavorites": "Добавить в избранное",
+  "removeFromFavorites": "Убрать из избранного"
+  }
+}

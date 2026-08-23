@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-dark: #1a1f16;
+  --color-primary-accent: #fde047;
+  --color-primary-highlight: #2dd4bf;
+}
+
+@keyframes mascot-bob {
+  0%, 100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+}
+
+.mascot-bob {
+  animation: mascot-bob 2.5s ease-in-out infinite;
+}
