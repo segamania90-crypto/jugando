@@ -5,10 +5,13 @@ import GameModal from '../components/GameModal';
 import FavoriteButton from '../components/FavoriteButton';
 import { fetchGames, fetchGenres, fetchPlatforms } from '../api/rawg';
 
+const MAX_LOAD_MORE = 4;
+
 export default function Catalog() {
   const { t } = useTranslation();
   const [games, setGames] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState(null);
   const [searchInput, setSearchInput] = useState('');
   const [search, setSearch] = useState('');
@@ -17,6 +20,8 @@ export default function Catalog() {
   const [genres, setGenres] = useState([]);
   const [platforms, setPlatforms] = useState([]);
   const [selectedGameId, setSelectedGameId] = useState(null);
+  const [page, setPage] = useState(1);
+  const [loadMoreCount, setLoadMoreCount] = useState(0);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -55,8 +60,11 @@ export default function Catalog() {
           genres: genre,
           platforms: platform,
           ordering: hasSearchOrFilters ? '-added' : '',
+          page: 1,
         });
         setGames(data);
+        setPage(1);
+        setLoadMoreCount(0);
       } catch (err) {
         setError(t('common.loadError'));
       } finally {
@@ -66,6 +74,30 @@ export default function Catalog() {
 
     loadGames();
   }, [search, genre, platform, t]);
+
+  async function handleLoadMore() {
+    try {
+      setLoadingMore(true);
+      const nextPage = page + 1;
+      const hasSearchOrFilters = Boolean(search || genre || platform);
+      const data = await fetchGames({
+        search,
+        genres: genre,
+        platforms: platform,
+        ordering: hasSearchOrFilters ? '-added' : '',
+        page: nextPage,
+      });
+      setGames((prev) => [...prev, ...data]);
+      setPage(nextPage);
+      setLoadMoreCount((prev) => prev + 1);
+    } catch (err) {
+      setError(t('landing.loadMoreError'));
+    } finally {
+      setLoadingMore(false);
+    }
+  }
+
+  const canLoadMore = loadMoreCount < MAX_LOAD_MORE;
 
   const hasActiveFilters = Boolean(searchInput || genre || platform);
 
@@ -157,36 +189,62 @@ export default function Catalog() {
         )}
 
         {!loading && !error && games.length > 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6">
-            {games.map((game) => (
-                 <div
-                   key={game.id}
-                   onClick={() => setSelectedGameId(game.id)}
-                   className="relative text-left bg-white/5 rounded-lg overflow-hidden hover:bg-white/10 transition cursor-pointer group"
-                 >
-                <FavoriteButton game={game} className="absolute top-2 right-2 z-10" />
-                <img
-                  src={game.background_image}
-                  alt={game.name}
-                  loading="lazy"
-                  draggable={false}
-                 className="w-full h-40 object-cover opacity-0 transition-all duration-500 group-hover:scale-105"
-                 onLoad={(e) => e.target.classList.remove('opacity-0')}
-                />  
-                <div className="p-3">
-                  <h2 className="font-semibold text-primary-accent truncate">
-                    {game.name}
-                  </h2>
-                  <p className="text-sm text-white/60 mt-1">
-                    {t('common.rating')}: {game.rating} / 5
-                  </p>
-                  <p className="text-sm text-white/60">
-                    {game.genres?.map((g) => g.name).join(', ')}
-                  </p>
+          <>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6">
+              {games.map((game) => (
+                   <div
+                     key={game.id}
+                     onClick={() => setSelectedGameId(game.id)}
+                     className="relative text-left bg-white/5 rounded-lg overflow-hidden hover:bg-white/10 transition cursor-pointer group"
+                   >
+                  <FavoriteButton game={game} className="absolute top-2 right-2 z-10" />
+                  <img
+                    src={game.background_image}
+                    alt={game.name}
+                    loading="lazy"
+                    draggable={false}
+                   className="w-full h-40 object-cover opacity-0 transition-all duration-500 group-hover:scale-105"
+                   onLoad={(e) => e.target.classList.remove('opacity-0')}
+                  />  
+                  <div className="p-3">
+                    <h2 className="font-semibold text-primary-accent truncate">
+                      {game.name}
+                    </h2>
+                    <p className="text-sm text-white/60 mt-1">
+                      {t('common.rating')}: {game.rating} / 5
+                    </p>
+                    <p className="text-sm text-white/60">
+                      {game.genres?.map((g) => g.name).join(', ')}
+                    </p>
+                  </div>
                 </div>
+              ))}
+
+              {loadingMore &&
+                Array.from({ length: 8 }).map((_, i) => (
+                  <div key={`more-${i}`} className="bg-white/5 rounded-lg overflow-hidden animate-pulse">
+                    <div className="w-full h-40 bg-white/10" />
+                    <div className="p-3 space-y-2">
+                      <div className="h-4 bg-white/10 rounded w-3/4" />
+                      <div className="h-3 bg-white/10 rounded w-1/2" />
+                      <div className="h-3 bg-white/10 rounded w-2/3" />
+                    </div>
+                  </div>
+                ))}
+            </div>
+
+            {canLoadMore && (
+              <div className="flex justify-center mt-8">
+                <button
+                  onClick={handleLoadMore}
+                  disabled={loadingMore}
+                  className="px-6 py-2.5 rounded-full text-sm font-semibold bg-white/5 hover:bg-white/10 shadow-md hover:scale-105 transition disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                >
+                  {loadingMore ? t('landing.loading') : t('landing.more')}
+                </button>
               </div>
-            ))}
-          </div>
+            )}
+          </>
         )}
       </div>
 
