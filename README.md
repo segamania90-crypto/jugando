@@ -1,5 +1,7 @@
 # 🎮 Jugando
 
+**English** | [Español](README.es.md)
+
 A video game catalog SPA built with React. Browse thousands of games via the RAWG API, sign up with a real account through Firebase Authentication, and save your favorites to the cloud with Firestore.
 
 **🔗 Live demo:** [jugando-hazel.vercel.app](https://jugando-hazel.vercel.app)
